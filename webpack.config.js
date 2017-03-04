@@ -1,10 +1,15 @@
 import path from 'path'
 
+const PATHS = {
+  app: path.join(__dirname, 'app'),
+  build: path.join(__dirname, 'build'),
+}
+
 export default {
-  entry: './app/index.js',
+  entry: PATHS.app,
   output: {
+    path: PATHS.build,
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build'),
   },
   module: {
     rules: [
