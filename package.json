@@ -6,6 +6,11 @@
   "repository": "https://github.com/IgorGee/react-boilerplate.git",
   "author": "Igor Goldvekht",
   "license": "MIT",
+  "scripts": {
+    "lint:js": "eslint --ignore-path .gitignore -- .",
+    "lint:css": "stylelint ./app/**/*.js",
+    "flow": "flow"
+  },
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
