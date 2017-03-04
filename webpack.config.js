@@ -15,10 +15,13 @@ export default {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        options: {
-          presets: [['es2015', { modules: false }]],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [['es2015', { modules: false }]],
+          },
         },
+        exclude: /node_modules/,
       },
     ],
   },
