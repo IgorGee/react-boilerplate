@@ -9,7 +9,9 @@
   "scripts": {
     "lint:js": "eslint --ignore-path .gitignore -- .",
     "lint:css": "stylelint ./app/**/*.js",
-    "flow": "flow"
+    "flow": "flow",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
