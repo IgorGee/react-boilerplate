@@ -1,4 +1,5 @@
 import path from 'path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
@@ -25,4 +26,9 @@ export default {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'React.js Boilerplate',
+    }),
+  ],
 }
