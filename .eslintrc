@@ -53,6 +53,8 @@
     "jsx-a11y/role-supports-aria-props": 2,
   },
   "settings": {
-    "import/resolver": "webpack"
+    "import/resolver": {
+      "config": "./webpack.config.js"
+    }
   }
 }
