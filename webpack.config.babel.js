@@ -6,7 +6,7 @@ const PATHS = {
   build: path.join(__dirname, 'build'),
 }
 
-export default {
+const commonConfig = {
   entry: PATHS.app,
   output: {
     path: PATHS.build,
@@ -32,4 +32,9 @@ export default {
       template: path.join(PATHS.app, 'index.html'),
     }),
   ],
+}
+
+export default (env) => {
+  console.log('env', env)
+  return commonConfig
 }
