@@ -13,7 +13,7 @@
     "lint:css": "stylelint",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
+    "precommit": "yarn lint-staged",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
@@ -23,10 +23,6 @@
       "test"
     ]
   },
-  "pre-commit": [
-    "precommit-msg",
-    "lint-staged"
-  ],
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
@@ -43,10 +39,10 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
     "html-webpack-plugin": "^2.28.0",
+    "husky": "^0.13.2",
     "jest": "^19.0.2",
     "lint-staged": "^3.3.1",
     "nodemon": "^1.11.0",
-    "pre-commit": "^1.2.2",
     "react-addons-test-utils": "^15.4.2",
     "style-loader": "^0.13.2",
     "stylelint": "^7.9.0",
