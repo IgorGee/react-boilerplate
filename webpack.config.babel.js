@@ -24,6 +24,8 @@ export default {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'React.js Boilerplate',
+      filename: path.join(PATHS.build, 'index.html'),
+      template: path.join(PATHS.app, 'index.html'),
     }),
   ],
 }
