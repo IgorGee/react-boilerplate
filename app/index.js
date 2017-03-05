@@ -1,5 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
+import 'normalize.css'
 
 export default class App extends React.Component {
   getContent = () => 'Hello World'
