@@ -1,20 +1,18 @@
 import React from 'react'
 import { render } from 'react-dom'
-import styled from 'styled-components'
 import 'normalize.css'
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: green;
-`
+import { HelloTitle, WorldTitle } from './components/Title'
 
 export default class App extends React.Component {
-  getContent = () => <Title>Hello World</Title>
+  getContent = () => 'Footer'
 
   render() {
     return (
-      <div>{this.getContent()}</div>
+      <div>
+        <HelloTitle />
+        <WorldTitle />
+        {this.getContent()}
+      </div>
     )
   }
 }
