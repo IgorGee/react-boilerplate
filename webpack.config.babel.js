@@ -8,10 +8,25 @@ const PATHS = {
 }
 
 const commonConfig = {
-  entry: PATHS.app,
+  entry: [
+    // activate HMR for React
+    'react-hot-loader/patch',
+
+    // bundle the client for webpack-dev-server
+    // and connect to the provided endpoint
+    'webpack-dev-server/client?http://localhost:8080',
+
+    // bundle the client for hot reloading
+    // only- means to only hot reload for successful updates
+    'webpack/hot/only-dev-server',
+
+    // the entry point of our app
+    PATHS.app,
+  ],
   output: {
     path: PATHS.build,
     filename: 'bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -47,7 +62,7 @@ const developmentConfig = () => {
 
       // Don't refresh if hot loading fails. If you want
       // refresh behavior, set hot: true instead.
-      hotOnly: true,
+      hot: true,
 
       // Display only errors to reduce the amount of output.
       stats: 'errors-only',

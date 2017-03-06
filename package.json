@@ -44,6 +44,7 @@
     "lint-staged": "^3.3.1",
     "nodemon": "^1.11.0",
     "react-addons-test-utils": "^15.4.2",
+    "react-hot-loader": "next",
     "style-loader": "^0.13.2",
     "stylelint": "^7.9.0",
     "stylelint-config-standard": "^16.0.0",
