@@ -85,6 +85,6 @@ const developmentConfig = () => {
 }
 
 export default (env) => {
-  console.log('env', env)
-  return commonConfig
+  if (env === 'production') return productionConfig()
+  return developmentConfig()
 }
