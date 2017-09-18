@@ -3,8 +3,8 @@ import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const PATHS = {
-  app: path.join(__dirname, '../src'),
-  build: path.join(__dirname, '../build'),
+  app: path.resolve(__dirname, '..', 'src'),
+  build: path.resolve(__dirname, '..', 'build'),
 }
 
 const commonConfig = {
@@ -44,14 +44,14 @@ const commonConfig = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'React.js Boilerplate',
-      filename: path.join(PATHS.build, 'index.html'),
-      template: path.join(PATHS.app, 'index.html'),
+      filename: path.resolve(PATHS.build, 'index.html'),
+      template: path.resolve(PATHS.app, 'index.html'),
     }),
   ],
   resolve: {
     modules: [
-      path.join(__dirname, '../src'),
-      path.join(__dirname, '../node_modules'),
+      path.resolve(__dirname, '..', 'src'),
+      path.resolve(__dirname, '..', 'node_modules'),
     ],
   },
 }
