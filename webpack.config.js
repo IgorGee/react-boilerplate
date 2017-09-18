@@ -60,6 +60,7 @@ const productionConfig = () => commonConfig
 
 const developmentConfig = () => {
   const config = {
+    devtool: 'cheap-module-eval-source-map',
     devServer: {
       // Enable history API fallback so HTML5 History API based
       // routing works. This is a good default that will come
