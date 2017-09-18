@@ -1,10 +1,10 @@
-import path from 'path'
-import webpack from 'webpack'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const PATHS = {
-  app: path.resolve(__dirname, '..', 'src'),
-  build: path.resolve(__dirname, '..', 'build'),
+  app: path.resolve(__dirname, 'src'),
+  build: path.resolve(__dirname, 'build'),
 }
 
 const commonConfig = {
@@ -50,8 +50,8 @@ const commonConfig = {
   ],
   resolve: {
     modules: [
-      path.resolve(__dirname, '..', 'src'),
-      path.resolve(__dirname, '..', 'node_modules'),
+      path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, 'node_modules'),
     ],
   },
 }
@@ -105,7 +105,7 @@ const developmentConfig = () => {
   )
 }
 
-export default (env) => {
+module.exports = (env) => {
   if (env === 'production') return productionConfig()
   return developmentConfig()
 }
