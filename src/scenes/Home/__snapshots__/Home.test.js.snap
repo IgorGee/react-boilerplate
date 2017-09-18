@@ -3,7 +3,7 @@
 exports[`<Home /> renders initial UI 1`] = `
 <div>
   <h1
-    className="eBQaql"
+    className="sc-bdVaJa jrFnaC"
   >
     Home
   </h1>
