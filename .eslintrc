@@ -5,16 +5,16 @@
     "browser": true,
     "node": true,
     "jest": true,
-    "es6": true
+    "es6": true,
   },
   "plugins": [
     "react",
-    "jsx-a11y"
+    "jsx-a11y",
   ],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
-    "ecmaFeatures": { "jsx": true }
+    "ecmaFeatures": { "jsx": true },
   },
   "rules": {
     "arrow-parens": [ "error", "always" ],
@@ -55,7 +55,7 @@
   "settings": {
     "import/resolver": {
       "webpack": {
-        "config": "./webpack.config.js"
+        "config": "./webpack.config.js",
       }
     }
   }
