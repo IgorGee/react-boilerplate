@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import { element } from 'prop-types'
 import styled from 'styled-components'
 import 'normalize.css'
 import Header from './components/Header'
@@ -23,7 +24,7 @@ const Root = (props) => (
 )
 
 Root.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: element.isRequired,
 }
 
 export default Root
