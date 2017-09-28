@@ -27,6 +27,7 @@
     "src"
   ],
   "jest": {
+    "setupTestFrameworkScriptFile": "./src/setupTests.js",
     "moduleDirectories": [
       "node_modules",
       "src"
@@ -41,7 +42,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "css-loader": "^0.28.7",
-    "enzyme": "^2.9.1",
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-16": "^1.0.0",
     "eslint": "^4.7.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-import-resolver-webpack": "^0.8.3",
