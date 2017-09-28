@@ -13,6 +13,7 @@
     "lint:css": "stylelint",
     "test": "jest",
     "test:watch": "jest --watchAll",
+    "test:coverage": "jest -- --coverage",
     "precommit": "yarn lint-staged",
     "prepush": "yarn test",
     "lint-staged": "lint-staged"
