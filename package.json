@@ -28,6 +28,9 @@
   ],
   "jest": {
     "setupTestFrameworkScriptFile": "./src/setupTests.js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
     "moduleDirectories": [
       "node_modules",
       "src"
@@ -44,6 +47,7 @@
     "css-loader": "^0.28.7",
     "enzyme": "^3.0.0",
     "enzyme-adapter-react-16": "^1.0.0",
+    "enzyme-to-json": "^3.0.1",
     "eslint": "^4.7.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-import-resolver-webpack": "^0.8.3",
