@@ -1,5 +1,15 @@
-import productionConfig from './production.webpack.config'
-import devConfig from './dev.webpack.config'
+import { pipe } from 'ramda'
+import { config } from './base.webpack.config'
+import {
+  babel, css,
+  hmr, htmlPlugin, devTool, devServer,
+} from './parts.webpack.config'
 
-export default (env: string) =>
-  (env === 'production') ? productionConfig() : devConfig()
+const base = pipe(babel, css, htmlPlugin('React.js Boilerplate'))
+
+const dev = pipe(base, devTool, devServer, hmr)
+
+const production = pipe(base)
+
+export default (env) =>
+  (env === 'production') ? production(config) : dev(config)
