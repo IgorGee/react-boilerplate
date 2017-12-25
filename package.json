@@ -2,7 +2,7 @@
   "name": "react-boilerplate",
   "version": "1.0.0",
   "description": "Boilerplate code for a react web app",
-  "main": "index.js",
+  "main": "src/index.ts",
   "repository": "https://github.com/IgorGee/react-boilerplate.git",
   "author": "Igor Goldvekht",
   "license": "MIT",
@@ -31,13 +31,25 @@
     "src"
   ],
   "jest": {
-    "setupTestFrameworkScriptFile": "./src/setupTests.js",
+    "transform": {
+      ".tsx?$": "ts-jest"
+    },
+    "setupTestFrameworkScriptFile": "./src/setupTests.ts",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
     "moduleDirectories": [
       "node_modules",
       "src"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "ts",
+      "tsx",
+      "node"
     ]
   },
   "devDependencies": {
@@ -70,6 +82,7 @@
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.0.0",
     "stylelint-processor-styled-components": "^1.2.1",
+    "ts-jest": "^22.0.0",
     "ts-loader": "^3.2.0",
     "tslint": "^5.8.0",
     "typescript": "^2.6.2",
