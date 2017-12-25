@@ -1,5 +1,4 @@
 import React from 'react'
-// import { element } from 'prop-types'
 import styled from 'styled-components'
 
 import 'normalize.css'
@@ -16,16 +15,12 @@ const Content = styled.main`
   flex: 1;
 `
 
-const Root = (props: any) => (
+const Root = (props: {children: JSX.Element}) => (
   <MaxHeight>
     <Header />
     <Content>{props.children}</Content>
     <Footer />
   </MaxHeight>
 )
-
-// Root.propTypes = {
-//   children: element.isRequired,
-// }
 
 export default Root
