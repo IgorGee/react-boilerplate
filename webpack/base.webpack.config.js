@@ -21,5 +21,6 @@ export const config = {
   plugins: [],
   resolve: {
     modules: RESOLVED_MODULES,
+    extensions: ['.js', '.json', '.ts', '.tsx', '*'],
   },
 }

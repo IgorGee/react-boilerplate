@@ -9,8 +9,8 @@ export const babel = curry((config) => ({
     rules: [
       ...config.module.rules,
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
+        test: /\.tsx?$/,
+        loaders: ['react-hot-loader/webpack', 'ts-loader'],
         exclude: /node_modules/,
       },
     ],

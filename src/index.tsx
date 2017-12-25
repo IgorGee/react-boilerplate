@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import App from './App'
 
-const render = (Component) =>
+declare var module: any;
+
+const render = (Component: any) =>
   // eslint-disable-next-line react/no-render-return-value
   ReactDOM.render(
     <AppContainer>

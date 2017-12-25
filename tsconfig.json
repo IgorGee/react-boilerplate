@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "outDir": "build/",
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "module": "es2015",
+    "target": "es5",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*",
+        "src/*"
+      ]
+    },
+    "types": [
+      "jest"
+    ],
+  },
+  "exclude": [
+    "coverage",
+    "webpack"
+  ]
+}
