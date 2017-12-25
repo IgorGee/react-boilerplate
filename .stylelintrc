@@ -3,6 +3,7 @@
   "extends": "stylelint-config-standard",
   "syntax": "scss",
   "rules": {
-    "rule-empty-line-before": "always"
+    "rule-empty-line-before": "always",
+    "no-empty-source": "never"
   }
 }

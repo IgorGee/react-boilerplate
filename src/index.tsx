@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import App from './App'
 
-declare var module: any;
+declare var module: any
 
 const render = (Component: any) =>
   // eslint-disable-next-line react/no-render-return-value
@@ -11,7 +11,7 @@ const render = (Component: any) =>
     <AppContainer>
       <Component />
     </AppContainer>,
-    document.getElementById('root')
+    document.getElementById('root'),
   )
 
 render(App)

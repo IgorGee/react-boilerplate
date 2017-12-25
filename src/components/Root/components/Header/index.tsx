@@ -7,8 +7,8 @@ const activeStyle = {
 
 const Header = () => (
   <nav>
-    <NavLink exact activeStyle={activeStyle} to="/">Home</NavLink>
-    <NavLink activeStyle={activeStyle} to="/about">About</NavLink>
+    <NavLink exact activeStyle={activeStyle} to='/'>Home</NavLink>
+    <NavLink activeStyle={activeStyle} to='/about'>About</NavLink>
   </nav>
 )
 

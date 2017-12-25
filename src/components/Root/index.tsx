@@ -1,9 +1,10 @@
 import React from 'react'
 // import { element } from 'prop-types'
 import styled from 'styled-components'
+
 import 'normalize.css'
-import Header from './components/Header'
 import Footer from './components/Footer'
+import Header from './components/Header'
 
 const MaxHeight = styled.div`
   display: flex;
