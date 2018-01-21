@@ -3,7 +3,7 @@ import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { curry } from 'ramda'
 
-export const babel = curry((config) => ({
+export const typescript = curry((config) => ({
   ...config,
   module: {
     rules: [
