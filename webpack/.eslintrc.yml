@@ -1,0 +1,52 @@
+---
+extends: airbnb-base
+env:
+  browser: true
+  es6: true
+  jest: true
+  node: true
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 6
+  sourceType: module
+rules:
+  arrow-body-style:
+  - error
+  - as-needed
+  arrow-parens:
+  - error
+  - always
+  class-methods-use-this: 'off'
+  comma-dangle:
+  - error
+  - always-multiline
+  indent:
+  - error
+  - 2
+  - SwitchCase: 1
+  max-len: 'off'
+  newline-per-chained-call: 'off'
+  no-confusing-arrow: 'off'
+  no-console: warn
+  no-use-before-define: 'off'
+  prefer-template: error
+  require-yield: 'off'
+  semi:
+  - error
+  - never
+  import/imports-first: 'off'
+  import/named: error
+  import/newline-after-import: 'off'
+  import/no-dynamic-require: 'off'
+  import/no-extraneous-dependencies: 'off'
+  import/no-named-as-default: 'off'
+  import/no-unresolved: error
+  import/no-webpack-loader-syntax: 'off'
+  import/prefer-default-export: 'off'
+settings:
+  import/resolver:
+    node:
+      paths:
+      - src
+      - node_modules
