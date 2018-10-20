@@ -2,3 +2,5 @@ node_modules
 build
 coverage
 webpack
+
+src/index.html
