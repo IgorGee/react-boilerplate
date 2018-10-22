@@ -5,6 +5,7 @@
     "checkJs": true,
     "strict": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "jsx": "react",
     "module": "es2015",
     "target": "es5",
