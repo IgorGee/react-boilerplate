@@ -1,4 +1,5 @@
 import React from 'react'
+import { hot } from 'react-hot-loader'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Root from 'components/Root'
@@ -16,4 +17,4 @@ const App = () => (
   </Router>
 )
 
-export default App
+export default hot(module)(App)

@@ -1,15 +1,18 @@
 import { pipe } from 'ramda'
 import { config } from './base.webpack.config'
 import {
-  typescript, css,
-  hmr, htmlPlugin, devTool, devServer,
+  typescript, css, htmlPlugin,
+  devTool, devServer, hmrTypescript,
 } from './parts.webpack.config'
 
-const base = pipe(typescript, css, htmlPlugin('React.js Boilerplate'))
+const isProduction = process.env.NODE_ENV === 'production'
 
-const dev = pipe(base, devTool, devServer, hmr)
+const ts = isProduction ? typescript : hmrTypescript
+
+const base = pipe(ts, css, htmlPlugin('React.js Boilerplate'))
+
+const dev = pipe(base, devTool, devServer)
 
 const production = pipe(base)
 
-export default (env) =>
-  (env === 'production') ? production(config) : dev(config)
+export default isProduction ? production(config) : dev(config)

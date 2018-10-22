@@ -17,6 +17,7 @@ export const config = {
     filename: 'bundle.js',
     publicPath: '/',
   },
+  mode: 'production',
   module: { rules: [] },
   plugins: [],
   resolve: {

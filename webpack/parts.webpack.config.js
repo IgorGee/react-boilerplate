@@ -1,5 +1,4 @@
 import path from 'path'
-import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { curry } from 'ramda'
 
@@ -10,8 +9,32 @@ export const typescript = curry((config) => ({
       ...config.module.rules,
       {
         test: /\.tsx?$/,
-        loaders: ['react-hot-loader/webpack', 'ts-loader'],
+        loaders: ['ts-loader'],
         exclude: /node_modules/,
+      },
+    ],
+  },
+}))
+
+export const hmrTypescript = curry((config) => ({
+  ...config,
+  module: {
+    rules: [
+      ...config.module.rules,
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: 'awesome-typescript-loader',
+        options: {
+          silent: process.argv.indexOf('--json') !== -1,
+          useBabel: true,
+          babelOptions: {
+            plugins: ['react-hot-loader/babel'],
+          },
+          reportFiles: [
+            'src/**/*.{ts,tsx}',
+          ],
+        },
       },
     ],
   },
@@ -28,30 +51,6 @@ export const css = curry((config) => ({
       },
     ],
   },
-}))
-
-export const hmr = curry((config) => ({
-  ...config,
-  entry: [
-    // activate HMR for React
-    'react-hot-loader/patch',
-
-    // bundle the client for webpack-dev-server
-    // and connect to the provided endpoint
-    'webpack-dev-server/client?http://localhost:8080',
-
-    // bundle the client for hot reloading
-    // only- means to only hot reload for successful updates
-    'webpack/hot/only-dev-server',
-
-    // the entry point of our app
-    config.entry,
-  ],
-  plugins: [
-    ...config.plugins,
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-  ],
 }))
 
 export const htmlPlugin = curry((title, config) => ({
@@ -73,15 +72,12 @@ export const devTool = curry((config) => ({
 
 export const devServer = curry((config) => ({
   ...config,
+  mode: 'development',
   devServer: {
     // Enable history API fallback so HTML5 History API based
     // routing works. This is a good default that will come
     // in handy in more complicated setups.
     historyApiFallback: true,
-
-    // Don't refresh if hot loading fails. If you want
-    // refresh behavior, set hot: true instead.
-    hot: true,
 
     // Display only errors to reduce the amount of output.
     stats: 'errors-only',
