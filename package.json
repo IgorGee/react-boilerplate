@@ -38,7 +38,7 @@
     "transform": {
       ".tsx?$": "ts-jest"
     },
-    "setupTestFrameworkScriptFile": "./src/setupTests.ts",
+    "setupTestFrameworkScriptFile": "./tools/setupTests.ts",
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
