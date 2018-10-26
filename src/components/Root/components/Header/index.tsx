@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import LinkButton from './LinkButton'
 
 const activeStyle = {
   color: 'green',
@@ -7,8 +8,12 @@ const activeStyle = {
 
 const Header = () => (
   <nav>
-    <NavLink exact activeStyle={activeStyle} to='/'>Home</NavLink>
-    <NavLink activeStyle={activeStyle} to='/about'>About</NavLink>
+    {/*
+    // @ts-ignore */}
+    <LinkButton to='/'>Home</LinkButton>
+    {/*
+    // @ts-ignore */}
+    <LinkButton to='/about'>About</LinkButton>
   </nav>
 )
 
