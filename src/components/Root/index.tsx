@@ -2,6 +2,7 @@ import React from 'react'
 
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider } from 'styled-components'
 
 import Navigation from './components/Navigation'
 
@@ -12,11 +13,17 @@ const palette = {
 
 const theme = createMuiTheme({ palette })
 
-const Root = (props: {children: JSX.Element}) => (
-  <MuiThemeProvider theme={theme}>
-    <CssBaseline />
-    <Navigation>{props.children}</Navigation>
-  </MuiThemeProvider>
+interface Props {
+  children: JSX.Element
+}
+
+const Root = (props: Props) => (
+  <ThemeProvider theme={theme}>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      <Navigation>{props.children}</Navigation>
+    </MuiThemeProvider>
+  </ThemeProvider>
 )
 
 export default Root

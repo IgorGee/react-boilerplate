@@ -4,7 +4,7 @@ import Hidden from '@material-ui/core/Hidden'
 import IconButton from '@material-ui/core/IconButton'
 import List from '@material-ui/core/List'
 import ListItemText from '@material-ui/core/ListItemText'
-import { StyledComponentProps, StyleRulesCallback, Theme, withStyles, WithStyles } from '@material-ui/core/styles'
+import { StyleRulesCallback, Theme, withStyles, WithStyles } from '@material-ui/core/styles'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import MenuIcon from '@material-ui/icons/Menu'
@@ -14,12 +14,27 @@ import LinkListItem from './LinkListItem'
 
 const drawerWidth = 240
 
+const Root = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`
+
+const Content = styled.main`
+  flex: 1;
+  padding: ${({theme}) => theme.spacing.unit * 3}px;
+  ${({theme}) => theme.breakpoints.up('sm')} {
+    margin-left: ${drawerWidth}px;
+  }
+`
+
+const Footer = styled.footer`
+  ${({theme}) => theme.breakpoints.up('sm')} {
+    margin-left: ${drawerWidth}px;
+  }
+`
+
 const stylesCallback: StyleRulesCallback = (theme) => ({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    minHeight: '100vh',
-  },
   drawer: {
     [theme.breakpoints.up('sm')]: {
       width: drawerWidth,
@@ -41,18 +56,6 @@ const stylesCallback: StyleRulesCallback = (theme) => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     width: drawerWidth,
-  },
-  content: {
-    flex: 1,
-    padding: theme.spacing.unit * 3,
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: drawerWidth,
-    },
-  },
-  footer: {
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: drawerWidth,
-    },
   },
 })
 
@@ -84,7 +87,7 @@ class ResponsiveDrawer extends React.Component <Props, {}> {
     )
 
     return (
-      <div className={classes.root}>
+      <Root>
         <AppBar position='fixed' className={classes.appBar}>
           <Toolbar>
             <IconButton
@@ -130,11 +133,9 @@ class ResponsiveDrawer extends React.Component <Props, {}> {
           </Hidden>
         </nav>
         <div className={classes.toolbar} />
-        <main className={classes.content}>
-          {this.props.children}
-        </main>
-        <footer className={classes.footer}>Footer</footer>
-      </div>
+        <Content>{this.props.children}</Content>
+        <Footer>Footer</Footer>
+      </Root>
     )
   }
 }
