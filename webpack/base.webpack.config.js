@@ -1,8 +1,9 @@
 import path from 'path'
 
-const PATHS = {
+export const PATHS = {
   app: path.resolve(__dirname, '..', 'src'),
   build: path.resolve(__dirname, '..', 'build'),
+  public: path.resolve(__dirname, '..', 'public'),
 }
 
 const RESOLVED_MODULES = [

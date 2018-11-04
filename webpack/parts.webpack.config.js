@@ -1,6 +1,7 @@
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { curry } from 'ramda'
+import { PATHS } from './base.webpack.config'
 
 export const typescript = curry((config) => ({
   ...config,
@@ -59,8 +60,8 @@ export const htmlPlugin = curry((title, config) => ({
     ...config.plugins,
     new HtmlWebpackPlugin({
       title,
-      filename: path.resolve(config.output.path, 'index.html'),
-      template: path.resolve(config.entry, 'index.html'),
+      filename: path.resolve(PATHS.build, 'index.html'),
+      template: path.resolve(PATHS.public, 'index.html'),
     }),
   ],
 }))
