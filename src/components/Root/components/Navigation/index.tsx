@@ -28,6 +28,8 @@ const Content = styled.main`
   }
 `
 
+const ToolbarSpacing = styled.div``
+
 const Footer = styled.footer`
   ${({theme}) => theme.breakpoints.up('sm')} {
     margin-left: ${drawerWidth}px;
@@ -78,7 +80,7 @@ class ResponsiveDrawer extends React.Component <Props, {}> {
 
     const drawer = (
       <>
-        <div className={classes.toolbar} />
+        <ToolbarSpacing className={classes.toolbar} />
         <List>
           <LinkListItem to='/'><ListItemText primary='Home' /></LinkListItem>
           <LinkListItem to='/about'><ListItemText primary='About' /></LinkListItem>
@@ -132,7 +134,7 @@ class ResponsiveDrawer extends React.Component <Props, {}> {
             </Drawer>
           </Hidden>
         </nav>
-        <div className={classes.toolbar} />
+        <ToolbarSpacing className={classes.toolbar} />
         <Content>{this.props.children}</Content>
         <Footer>Footer</Footer>
       </Root>

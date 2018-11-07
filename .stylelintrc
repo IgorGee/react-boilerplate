@@ -4,6 +4,7 @@
   "syntax": "scss",
   "rules": {
     "rule-empty-line-before": null,
-    "no-empty-source": null
+    "no-empty-source": null,
+    "block-no-empty": null
   }
 }
