@@ -106,7 +106,7 @@ class ResponsiveDrawer extends React.Component <Props, {}> {
         </AppBar>
         <nav className={classes.drawer}>
           {/* The implementation can be swap with js to avoid SEO duplication of links. */}
-          <Hidden smUp implementation='js'>
+          <Hidden smUp implementation='css'>
             <Drawer
               variant='temporary'
               anchor={theme.direction === 'rtl' ? 'right' : 'left'}
